@@ -1,0 +1,53 @@
+.movieCardw {
+  list-style: none;
+  font-size: 1.5rem;
+  text-align: center;
+  height: 180px;
+  width: 100%;
+  -webkit-filter: grayscale(1);
+}
+
+.movieCard {
+  list-style: none;
+  font-size: 1.5rem;
+  text-align: center;
+  height: 180px;
+  width: 100%;
+}
+
+.movieImage {
+  position: relative;
+  bottom: -15px;
+  border-radius: 15px;
+  background-color: azure;
+
+}
+
+.degradado {
+  width: 100%;
+  position: relative;
+  bottom: 0px;
+  height: 90px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: linear-gradient(180deg, #772CE8 0%, #A41DC1 100%);
+}
+
+.link1 {
+  color: white;
+}
+
+.tit1 {
+  position: relative;
+  bottom: 5em;
+  left: 10px;
+  text-align: left;
+  font-size: 1.24rem;
+}
+
+@media (max-width: 560px) {
+  .movieImage {
+    width: 100%;
+    height: 60%;
+  }
+}

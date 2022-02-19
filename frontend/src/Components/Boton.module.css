@@ -1,0 +1,49 @@
+.movieCard {
+    list-style: none;
+    font-size: 1.5rem;
+    text-align: center;
+    height: auto;
+    background: linear-gradient(180deg, #772CE8 0%, #A41DC1 100%);
+    padding: 0.4rem;
+    margin: 0.3rem;
+    border-radius: 0.6rem;
+    text-decoration: none;
+  }
+
+  .movieImage {
+    position: relative;
+    bottom: -15px;
+    border-radius: 0.6rem;
+    background-color: azure;
+  
+  }
+  
+  .degradado {
+    width: 100%;
+    position: relative;
+    border-radius: 0.6rem;
+    background: linear-gradient(180deg, #772CE8 0%, #A41DC1 100%);
+  }
+  
+  .link1 {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .tit1 {
+    padding: 0.1rem;
+    margin: 0.1rem;
+    position: relative;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 560px) {
+    .movieImage {
+      width: 100%;
+      height: 60%;
+    }
+  }

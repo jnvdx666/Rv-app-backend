@@ -1,0 +1,54 @@
+.div1 {
+    margin-top: 4rem;
+}
+
+h1 {
+    color: white;
+    font-size: 2rem;    
+}
+
+.nolink {
+    text-decoration: none;
+}
+
+.text11 {
+    margin-top: 3rem;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.img1 {
+    margin-top: 2rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 1rem;
+    object-fit: cover;
+    width: 20rem;
+    height: 20rem;
+}
+
+.divimg2 {
+    padding: 2rem;
+    padding-bottom: 0rem;
+    padding-top: 0rem;
+}
+
+.img2 {
+    margin-top: 2rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 3rem;
+    padding: 6rem;
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+}
+
+.boton1 {
+    padding: 3rem;
+    padding-bottom: 0rem;
+}

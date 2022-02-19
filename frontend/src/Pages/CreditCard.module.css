@@ -1,0 +1,286 @@
+.div1 {
+    margin-top: 2rem;
+}
+
+h1 {
+    color: white;
+    font-size: 2rem;    
+}
+
+.nolink {
+    text-decoration: none;
+}
+
+
+.div2 {
+    margin-top: 3rem;
+    margin-bottom: 0rem;
+}
+
+.tarjetas {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    height: 13rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text11 {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.img1 {
+    margin-top: 2rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 1rem;
+    object-fit: cover;
+    width: 20rem;
+    height: 20rem;
+}
+
+.divimg2 {
+    padding: 2rem;
+    padding-bottom: 0rem;
+    padding-top: 0rem;
+}
+
+.img2 {
+    margin-top: 2rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 3rem;
+    padding: 6rem;
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+}
+
+.boton1 {
+    padding: 3rem;
+    padding-bottom: 0rem;
+    text-decoration: none;
+}
+
+.nolink {
+    text-decoration: none;
+}
+
+Link {
+    text-decoration: none;
+}
+
+.boton1 {
+    text-decoration: none;
+}
+
+
+h1 {
+    color: white;
+    font-size: 2rem;    
+}
+
+
+.text11 {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.divimg2 {
+    padding: 2rem;
+    padding-bottom: 0rem;
+    padding-top: 0rem;
+}
+
+.grid3 {
+    margin-top: 9rem;
+    display: grid;
+    grid-column: 50%;
+}
+
+.img2 {
+    margin-top: 2rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 5rem;
+    padding: 6rem;
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+}
+
+.boton1 {
+    padding: 3rem;
+    padding-bottom: 0rem;
+}
+
+.Grid1 {
+    display: grid;
+    column-count: 2;
+}
+
+.divfoto {
+    display: grid;
+    grid-column: 1;
+}
+
+.centrar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.centrar2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 16%;
+}
+
+.apple {
+    margin-top: 0rem;
+    margin-bottom: 1.5rem;
+    background-color: white;
+    border-radius: 0.6rem;
+    margin-left: 3.2rem;
+    margin-right: 3.2rem;
+    padding: 0.6rem;
+}
+
+.appay {
+    height: 1.5rem;
+}
+
+.precio {
+    color: linear-gradient(180deg, #772CE8 0%, #A41DC1 100%);
+    font-size: 1rem;
+    grid-column: 3;
+}
+
+.boton2 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.boton3 {
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.boton4 {
+    padding-top: 0rem;
+    padding-bottom: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.tex4 {
+    margin: 0rem;
+    font-size: 1.3rem;
+    text-align: left;
+    padding: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+.tex5 {
+    margin: 0rem;
+    font-size: 1.3rem;
+    text-align: right;
+    padding: 0.5rem;
+    padding-right: 1.5rem;
+}
+
+.tex2 {
+    text-align: left;
+    font-size: 1.2rem;
+    padding: 0rem;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+    margin-left: 0rem;
+}
+
+.tex3 {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 0rem;
+}
+
+
+.divtexto {
+    display: grid;
+    grid-column: 2;
+    grid-column: 75%;
+}
+
+.divtexto2 {
+    display: grid;
+    grid-column: 3;
+    grid-column: 75%;
+}
+
+.texprecio {
+    font-size: 1.5rem;
+    padding: 0rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background: -webkit-linear-gradient(180deg, #751cfa 0%, #d213fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.grid {
+    display: grid;
+    grid-column: 50%;
+    background: rgb(63, 63, 63);
+    margin: 0.6rem;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+}
+
+.foto1 {
+    padding: 1rem;
+    border-radius: 1.5rem;
+    object-fit: cover;
+    width: 8rem;
+    height:8rem;
+    padding-right: 0.8rem;
+}
+
+.sumador {
+    font-size: 1.2rem;
+    padding: 0rem;
+    margin: 0rem;
+}
+
+.nolink {
+    text-decoration: none;
+}
+
+.tit1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+h4 {
+    padding: 0rem;
+    margin: 0rem;
+    text-align: left;
+    color: white;
+    font-weight: 400;
+    font-size: 0.6rem;
+}

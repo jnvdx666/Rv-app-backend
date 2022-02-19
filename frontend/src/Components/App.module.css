@@ -1,0 +1,51 @@
+.title {
+  text-align: center;
+  font-size: 3rem;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073,
+    0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    color: white;
+    text-decoration: none;
+}
+
+.tit2 {
+  text-align: left;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  font-size: 3.4rem;
+  margin-bottom: 01.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.colorthanic{
+  color: #347771;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.footer1 {
+  position: sticky;
+  font-weight: 200;
+  margin-bottom: 3rem;
+  margin-bottom: 0.5rem;
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.link1 {
+  color: white;
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 560px) {
+  .tit2 {
+    font-size: 3.4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: white;
+    text-decoration: none;
+  }
+}
+

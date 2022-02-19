@@ -1,0 +1,61 @@
+.tit {
+
+    text-align: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    font-size: 3rem;
+    margin-bottom: 01.5rem;
+    color: white;
+    text-decoration: none;
+}
+
+.nolink {
+    text-decoration: none;
+}
+
+.div1 {
+    margin: 2rem;
+    margin-top: 20%;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 15px;
+    background: linear-gradient(180deg, #772CE8 0%, #A41DC1 100%);
+}
+
+.tit4 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-top: 3rem;
+    text-align: left;
+    font-size: 3.4rem;
+    margin-left: 1rem;
+    padding: 0rem;
+    margin-bottom: -1rem;
+}
+.botons {
+    padding-left: 3rem;
+    padding-bottom: 0rem;
+    padding-top: 1rem;
+    padding-right: 3rem;
+}
+
+.morado {
+    color: #A31DC1;
+}
+
+.horicard {
+    margin-left: 2.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 180px);
+    justify-content: center;
+    margin-top: 0em;
+}
+
+.fina {
+    font-weight: 300;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}

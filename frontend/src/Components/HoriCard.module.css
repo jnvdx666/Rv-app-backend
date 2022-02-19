@@ -1,0 +1,28 @@
+.moviesGrid {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 20px;
+    height: 400px;
+    margin-top: 0rem;  
+    text-decoration: none;
+}
+
+.nolink {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem;
+    
+}
+
+@media (max-width: 560px) {
+    .moviesGrid {
+        margin-top: 0rem;
+        display: flex;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        padding: 20px;
+        height: 12rem;
+    }
+}
+  
