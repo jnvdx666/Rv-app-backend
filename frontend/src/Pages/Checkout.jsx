@@ -20,7 +20,7 @@ export function Checkout() {
       <main>
         <div className={styles.grid}>
           <div className={styles.divfoto}>
-            <img className={styles.foto1} src="https://lh5.googleusercontent.com/p/AF1QipMQyHP8poRIAkHSksaCFHoT4wD7dhOzfRujRfU_" alt="" />
+            <img className={styles.foto1} src="https://dediscoteca.com/wp-content/uploads/2020/01/76779546_2467175953536251_7713894811329101824_o.jpg" alt="" />
           </div>
           <div className={styles.divtexto}>
             <h3 className={styles.tex2}>Entrada Moma 24 de Febrero </h3>

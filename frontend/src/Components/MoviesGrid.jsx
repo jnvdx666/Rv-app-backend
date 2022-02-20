@@ -5,11 +5,11 @@ import { Calendario } from "../Pages/Calendario";
 import { CalendarioVenta } from "../PagesVenta/Calendario";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-export function MoviesGrid({enlace, dir}) {
+export function MoviesGrid({enlace, dir, estado}) {
   return (
     <ul className={styles.moviesGrid}>
       {sitios.map((sitios) => (
-        <Link to={enlace} component={dir}className={styles.nolink}>
+        <Link to={enlace} component={dir} state={estado} className={styles.nolink}>
         <MovieCard key={sitios.id} movie={sitios} />
         </Link>
       ))}

@@ -14,7 +14,7 @@ export function DondeSalirVenta() {
         <h2 className={styles.tit2}>Elige tu ubicación</h2>
       </header>
       <main>
-        <MoviesGrid enlace="/cal-venta" dir="CalendarioVenta"/>
+        <MoviesGrid enlace="/cal-venta" dir="CalendarioVenta" estado={{ ciudad: "Bilbao" }} />
       </main>
     </div>
     );

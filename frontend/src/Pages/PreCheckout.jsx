@@ -13,7 +13,7 @@ export function PreCheckout() {
       </header>
       <main>
         <div className={styles.div1}>
-          <img className={styles.img1} src="https://lh5.googleusercontent.com/p/AF1QipMQyHP8poRIAkHSksaCFHoT4wD7dhOzfRujRfU_" alt="" />
+          <img className={styles.img1} src="https://dediscoteca.com/wp-content/uploads/2020/01/76779546_2467175953536251_7713894811329101824_o.jpg" alt="" />
         </div>
         <h1 className={styles.text11}>Entrada Moma</h1>
         <div className={styles.divimg2}><img className={styles.img2} src={copa1} alt="" /></div>

@@ -7,6 +7,11 @@ h1 {
     font-size: 2rem;    
 }
 
+.botonsubmit {
+    border-radius: 0.6rem;
+    background: linear-gradient(180deg, #772CE8 0%, #A41DC1 100%);
+}
+
 .nolink {
     text-decoration: none;
 }

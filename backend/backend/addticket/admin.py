@@ -6,7 +6,7 @@ from .models import discotecas
 
 
 class addticketAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'discoteca', 'estado')
+    list_display = ('titulo', 'discoteca', 'estado', 'precio', 'dia', 'mes', 'ciudad')
 
 class discotecasAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'foto')

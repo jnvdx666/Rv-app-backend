@@ -3,29 +3,43 @@ import styles from "./Discoteca.module.css";
 import { Botongen } from "../Components/Boton"
 import {DatosVenta} from "./Datos"
 import { useState, createContext, useContext } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 
 
-export function DiscotecaVenta({fecha}) {
+export function DiscotecaVenta() {
+
+    const location = useLocation()
+    const { dia, mes, ciudad } = location.state
+    const d = dia.toString()
 
 
     return(
         <div>
       <header>
-        <h2 className={styles.tit2}>¿A qué discoteca?</h2>
+        <h2 className={styles.tit2}>¿De qué discoteca?</h2>
       </header>
       <main>
         <div className={styles.dv1}>
-        <Link to="/datos-venta"  component={DatosVenta} className={styles.nolink}>
-          <div className={styles.bt1}><Botongen texto={"Moma"} /></div>
+        <Link to="/datos-venta"  component={DatosVenta} state={{ diat: dia, mest: mes, ciudadt: ciudad, discoteca: "Moma" }} className={styles.nolink}>
+          <div  className={styles.bt1}><Botongen texto={"Moma"} /></div>
         </Link>
-          <div className={styles.bt1}><Botongen texto={"Back"} /></div>
-          <div className={styles.bt1}><Botongen texto={"Stage"} /></div>
-          <div className={styles.bt1}><Botongen texto={"Budha"} /></div>
-          <div className={styles.bt1}><Botongen texto={"Flash"} /></div>
-          <div className={styles.bt1}><Botongen texto={"Sonora"} /></div>
-        </div>
-
+        <Link to="/datos-venta"  component={DatosVenta} state={{ diat: dia, mest: mes, ciudadt: ciudad, discoteca: "Back" }} className={styles.nolink}>
+          <div  className={styles.bt1}><Botongen texto={"Back"} /></div>
+        </Link>
+        <Link to="/datos-venta"  component={DatosVenta} state={{ diat: dia, mest: mes, ciudadt: ciudad, discoteca: "Stage" }} className={styles.nolink}>
+          <div  className={styles.bt1}><Botongen texto={"Stage"} /></div>
+        </Link>
+        <Link to="/datos-venta"  component={DatosVenta} state={{ diat: dia, mest: mes, ciudadt: ciudad, discoteca: "Budha" }} className={styles.nolink}>
+          <div  className={styles.bt1}><Botongen texto={"Budha"} /></div>
+        </Link>
+        <Link to="/datos-venta"  component={DatosVenta} state={{ diat: dia, mest: mes, ciudadt: ciudad, discoteca: "Flash" }} className={styles.nolink}>
+          <div  className={styles.bt1}><Botongen texto={"Flash"} /></div>
+        </Link>
+        <Link to="/datos-venta"  component={DatosVenta} state={{ diat: dia, mest: mes, ciudadt: ciudad, discoteca: "Sonora" }} className={styles.nolink}>
+          <div  className={styles.bt1}><Botongen texto={"Sonora"} /></div>
+        </Link> 
+        </div>   
+        <h2>{d} y {mes} y {ciudad}</h2>
       </main>
     </div>
     );

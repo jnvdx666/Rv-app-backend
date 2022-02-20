@@ -6,7 +6,7 @@ from .models import discotecas
 class addticketSerializer(serializers.ModelSerializer):
     class Meta:
         model = addticket
-        fields = ('id', 'titulo', 'discoteca', 'dia', 'mes', 'precio',  'estado')
+        fields = ('id', 'titulo', 'discoteca', 'dia', 'mes', 'precio', 'ciudad', 'estado')
 
 class discotecasSerializer(serializers.ModelSerializer):
     class Meta:

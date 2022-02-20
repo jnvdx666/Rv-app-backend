@@ -5,7 +5,8 @@ import styles from "./Calendario.module.css";
 import { Botongen } from "../Components/Boton"
 import { DiscotecaVenta } from "./Discoteca";
 import './Calendar.css';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useLocation  } from "react-router-dom";
+
 
 
 
@@ -13,11 +14,21 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 export function CalendarioVenta() {
 
-    const [value, setDate] = useState(new Date());
+    function capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 
+    const location = useLocation()
+    const { ciudad } = location.state
+    const [value, setDate] = useState(new Date());
     const onChange = value => {setDate(value);}
-    
+    const ciud = {ciudad}
+    var mesletra = value.toLocaleString("es", { month: "long" });
+    mesletra = capitalizeFirstLetter(mesletra)
+
     return (
+
+        
 
         <div>
         <header>
@@ -28,10 +39,11 @@ export function CalendarioVenta() {
         <Calendar onChange={onChange} value={value} minDate={new Date()} maxDate={new Date(2022, 3, 30)}/>
       </div>
       <div className={styles.botons}>
-        <Link to="/discotecas-venta"  component={DiscotecaVenta} className={styles.nolink}>
+        <Link to="/discotecas-venta"  component={DiscotecaVenta} state={{dia: (value.getDate()).toString() , mes: mesletra, ciudad: "Bilbao"}} className={styles.nolink}>
           <Botongen texto={"Siguiente"} />
         </Link>
-      <h2>Fecha: {value.toString()}</h2>
+      <h2>Fecha: Dia {(value.getDate()).toString()} del mes {(value.getMonth()+1).toString()}</h2>
+      <h2>{mesletra}</h2>
       </div>
         
         </main>
