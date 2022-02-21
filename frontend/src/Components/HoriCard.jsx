@@ -11,13 +11,13 @@ import useFetch from "react-fetch-hook"
 
 
 export function HoriCard() {
-  const url = "http://127.0.0.1:8000/api/discotecas/"
+  const url = "http://85.85.68.198:8000/api/discotecas/"
   const {data} = useFetch(url);
   
   return (
     <ul className={styles.moviesGrid}>
     {data?.map((data) => (
-        <Link to="/lista-" component={Listado}className={styles.nolink}>
+        <Link to="/lista-" component={Listado} state={{discoteca: data.nombre, dia:false, mes:false, ciudad: "Bilbao"}} discoteca={data.nombre} dia={false} mes={false} className={styles.nolink}>
           <Card nombre={data.nombre} foto={data.foto} />
         </Link>
     ))}

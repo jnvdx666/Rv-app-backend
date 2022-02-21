@@ -12,9 +12,13 @@ import image from "./logorv.svg";
 import { useEffect } from "react";
 import { useState } from "react";
 import { match } from "react";
+import useFetch from "react-fetch-hook"
 
 
 export function LandingPage() {
+
+    const url = "http://85.85.68.198:8000/api/addticket/"
+    const {data} = useFetch(url);
 
     return(
         <div>
@@ -22,12 +26,12 @@ export function LandingPage() {
         <div><img className={styles.logorv}  src={image} alt="" /></div>
         <h3 className={styles.fina}>LAS MEJORES ENTRADAS A LAS MEJORES DISCOTECAS</h3>
         <li className={styles.grid}>
-        <Link to="/dnd-salir" component={DondeSalir} className={styles.nolink}>
-          <Botongen texto={"Compralas ya!"}/>
+        <Link to="/dnd-salir" component={DondeSalir} state={{datos: data}} className={styles.nolink}>
+          <Botongen texto={"¡Compralas ya!"}/>
         </Link>
 
         <Link to="/dnd-salir-venta" component={DondeSalirVenta} className={styles.nolink}>
-          <Botongen texto={"Vendelas ya!"}/> 
+          <Botongen texto={"¡Vendelas ya!"}/> 
         </Link>
         
         </li>
@@ -35,13 +39,13 @@ export function LandingPage() {
         <HoriCard className={styles.horicard} />
         <li className={styles.grid2}>
           
-        <Link to="/escQR" component={EscQR} className={styles.nolink}>
+        {/* <Link to="/escQR" component={EscQR} className={styles.nolink}>
           <Botongen texto={"Escanear QR"}/>
         </Link>
 
         <Link to="/mostrarQR" component={QRvista} className={styles.nolink}>
           <Botongen texto={"Mostrar QR"} />
-        </Link>
+        </Link> */}
         
          </li>
       </main>

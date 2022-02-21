@@ -2,23 +2,33 @@ import { MoviesGrid } from "../Components/MoviesGrid";
 import styles from "./Datos.module.css";
 import App from "../App"
 import { Botongen } from "../Components/Boton";
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
+import { CreditCardVenta } from "./CreditCard";
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation} from "react-router-dom";
 import { useState, createContext, useContext } from "react";
+import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
+
+
+
 
 
 export function DatosVenta() {
-
+    const { register, handleSubmit, watch, errors } = useForm();
     const location = useLocation()
     const { diat, mest, ciudadt, discoteca } = location.state
 
+    const navigate = useNavigate();
 
-    const url = "http://127.0.0.1:8000/api/addticket/"
+
+    const url = "http://85.85.68.198:8000/api/addticket/"
     const [data , setData] = useState({
       titulo: "",
       discoteca: "",
       dia: "",
       mes: "",
       precio: "",
+      instagram: "",
+      n_tel_vend: "",
       estado: false,
     })
 
@@ -32,43 +42,44 @@ export function DatosVenta() {
 
     function submit(e) {
         e.preventDefault();
-        fetch(url, {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            "titulo": "Entrada" + " " + discoteca + " " + diat + " " + "de" + " " + mest,
-            "discoteca":discoteca,
-            "dia": diat,
-            "mes": mest,
-            "ciudad": ciudadt,
-            "precio": data.precio,
-            "estado": false
-          })
-        })
+
+        navigate('/credit-card-venta', {state:{
+        titulo: "Entrada" + " " + discoteca + " " + diat + " " + "de" + " " + mest,
+        discoteca:discoteca,
+        dia: diat,
+        mes: mest,
+        ciudad: ciudadt,
+        precio: data.precio,
+        instagram: data.instagram,
+        n_tel_vend: data.n_tel_vend,
+        estado: false}});
     }  
     return(
         <div>
       <header>
       </header>
       <main>
-        <h1 className={styles.text11}>Introduce los datos de la entrada</h1>
-        <h2>Ciudad: {ciudadt}</h2>
-        <h2>Día: {diat}</h2>
-        <h2>Mes: {mest}</h2>
-        <h2>Discoteca: {discoteca}</h2>
+        
+        <div className={styles.div1}>
+          <img className={styles.img1} src="https://lh5.googleusercontent.com/p/AF1QipMQyHP8poRIAkHSksaCFHoT4wD7dhOzfRujRfU_" alt="" />
+        </div>
+        <h1 className={styles.text11}>Entrada {discoteca} {diat}  {mest}</h1>
         <form onSubmit={(e) => submit(e)}>
+          <div>
+            <input className={styles.input1} onChange={(e) => handle(e)} id="precio" value={data.precio} type="number" min="0" name="precio" pattern="\d*" placeholder="Precio" required />
+          </div>
+          <div>
+            <input className={styles.input1} onChange={(e) => handle(e)} id="instagram" value={data.instagram} type="text" name="instagram" placeholder="@tu_instagram" required/>
+          </div>
+          <div>
+            <input className={styles.input1} onChange={(e) => handle(e)} id="n_tel_vend" value={data.n_tel_vend} type="n_tel_vend" name="n_tel_vend" pattern="\d*" placeholder="Nº de Telefono" required/>
+          </div>
           <div className={styles.center}>
-          <div>
-            <input onChange={(e) => handle(e)} id="precio" value={data.precio} type="number" min="0" name="precio" placeholder="Precio"/>
-          </div>
-          <div>
-            <button className={styles.botonsubmit} type="submit">Siguiente</button>
-          </div>     
-          </div>
+              <button className={styles.botonsubmit}  type="submit">Ponla ya a la venta</button>
+            
+          </div>  
         </form>
+
       </main>
     </div>
     );

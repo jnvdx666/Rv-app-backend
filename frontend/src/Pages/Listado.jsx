@@ -1,14 +1,15 @@
 import { MoviesGrid } from "../Components/MoviesGrid";
 import styles from "./Listado.module.css";
 import { ListaEntradas} from "../Components/ListaEntradas";
+import useFetch from "react-fetch-hook"
 
 
-export function Listado() {
+export function Listado({ discoteca, dia, mes }) {
     return(
       <main>
         <h2 className={styles.tit2}>Resultado de tu busqueda</h2>
-        <h3 className={styles.tit3}>15 resultados</h3>
-        <ListaEntradas discoteca={"Moma"} dia={"24"} mes={"Febrero"} />
+        
+        <ListaEntradas discoteca={discoteca} dia={dia} mes={mes} />
       </main>
     );
   }

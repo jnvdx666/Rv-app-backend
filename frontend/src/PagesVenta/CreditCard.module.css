@@ -100,7 +100,13 @@ h1 {
 }
 
 .grid3 {
-    margin-top: 9rem;
+    margin-top: 6rem;
+    display: grid;
+    grid-column: 50%;
+}
+
+.grid4 {
+    margin-top: 1rem;
     display: grid;
     grid-column: 50%;
 }

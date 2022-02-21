@@ -5,10 +5,14 @@ import copa1 from "./1copa.svg";
 import Tarjetas from "./Tarjetas.svg";
 import { Checkout } from "./Checkout"
 import { Final } from "./Final"
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 
 
 export function CreditCard() {
+
+  const location = useLocation()
+  const { datos } = location.state
+
   return(
       <div>
     <header>
@@ -31,10 +35,10 @@ export function CreditCard() {
             <h3 className={styles.tex4}>Precio Total:</h3>
           </div>
           <div className={styles.divtexto}> 
-            <h3 className={styles.tex5}>15€</h3>
+            <h3 className={styles.tex5}>{datos.precio+0.35}€</h3>
           </div>
         </div>
-        <Link to="/gracias" component={Final} className={styles.nolink}>
+        <Link to="/gracias" component={Final} state={{data:datos}} className={styles.nolink}>
           <div className={styles.boton3}>
             <Botongen texto={"Realizar pago"} />
           </div>

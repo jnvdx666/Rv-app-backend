@@ -4,10 +4,22 @@ import { Botongen } from "../Components/Boton";
 import copa1 from "./1copa.svg";
 import Tarjetas from "./Tarjetas.svg";
 import { FinalVenta } from "./Final"
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 
 
 export function CreditCardVenta() {
+  const location = useLocation()
+  const {         
+  titulo,
+  discoteca,
+  dia,
+  mes,
+  ciudad,
+  precio,
+  instagram,
+  n_tel_vend,
+  estado } = location.state
+
   return(
       <div>
     <header>
@@ -27,13 +39,23 @@ export function CreditCardVenta() {
 
       <div className={styles.grid3}>
           <div className={styles.divfoto}> 
+            <h3 className={styles.tex4}>Comisión:</h3>
+          </div>
+          <div className={styles.divtexto}> 
+            <h3 className={styles.tex5}>0.50€</h3>
+          </div>
+      </div>
+
+      <div className={styles.grid4}>
+          <div className={styles.divfoto}> 
             <h3 className={styles.tex4}>Precio Total:</h3>
           </div>
           <div className={styles.divtexto}> 
-            <h3 className={styles.tex5}>15€</h3>
+            <h3 className={styles.tex5}>{precio - 0.50}€</h3>
           </div>
-        </div>
-        <Link to="/gracias-venta" component={FinalVenta} className={styles.nolink}>
+      </div>
+
+        <Link to="/gracias-venta" component={FinalVenta} state={{ titulo, discoteca, dia, mes, ciudad, precio, instagram, n_tel_vend, estado}} className={styles.nolink}>
           <div className={styles.boton3}>
             <Botongen texto={"Realizar pago"} />
           </div>

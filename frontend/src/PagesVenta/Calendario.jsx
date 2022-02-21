@@ -7,11 +7,6 @@ import { DiscotecaVenta } from "./Discoteca";
 import './Calendar.css';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation  } from "react-router-dom";
 
-
-
-
-
-
 export function CalendarioVenta() {
 
     function capitalizeFirstLetter(string) {
@@ -42,10 +37,7 @@ export function CalendarioVenta() {
         <Link to="/discotecas-venta"  component={DiscotecaVenta} state={{dia: (value.getDate()).toString() , mes: mesletra, ciudad: "Bilbao"}} className={styles.nolink}>
           <Botongen texto={"Siguiente"} />
         </Link>
-      <h2>Fecha: Dia {(value.getDate()).toString()} del mes {(value.getMonth()+1).toString()}</h2>
-      <h2>{mesletra}</h2>
       </div>
-        
         </main>
       </div>
       );

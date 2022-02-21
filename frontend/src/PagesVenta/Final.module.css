@@ -21,6 +21,15 @@ h1 {
 }
 
 .text12 {
+    padding-left: 1rem;
+    text-align: left;
+    color: white;
+    font-size: 2rem;
+    padding: 1rem;
+    padding-bottom: 0rem;
+}
+
+.text12 {
     text-align: left;
     color: white;
     font-size: 0.5rem;

@@ -8,7 +8,10 @@ class addticket(models.Model):
     dia = models.CharField(max_length=2, null=True)
     mes = models.CharField(max_length=25, null=True)
     precio = models.FloatField(null=True)
-    ciudad = models.TextField(default="Prueba")
+    ciudad = models.TextField(max_length=20,default="Prueba")
+    instagram = models.TextField(max_length=20,default="@tu_instagram")
+    n_tel_comp = models.CharField(max_length=9,default="000000000")
+    n_tel_vend = models.CharField(max_length=9,default="000000000")
     estado = models.BooleanField(default=False)
 
     def _str_(self):

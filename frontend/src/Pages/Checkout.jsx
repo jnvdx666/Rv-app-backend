@@ -5,14 +5,18 @@ import styles from "./Checkout.module.css";
 import { Botongen } from "../Components/Boton";
 import {CreditCard} from "./CreditCard";
 import copa1 from "./1copa.svg";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import minus from "./minus.svg";
 import plus from "./plus.svg";
 import appay from "./ap-pay.svg";
 import gpay from "./g-pay.svg";
 
 export function Checkout() {
+
+    const location = useLocation()
+    const { data } = location.state
     const onRequestApplePay = useCallback(() => /* TODO */ []);
+
     return(
         <div>
       <header>
@@ -24,7 +28,7 @@ export function Checkout() {
           </div>
           <div className={styles.divtexto}>
             <h3 className={styles.tex2}>Entrada Moma 24 de Febrero </h3>
-            <div className={styles.grid3}>
+            {/* <div className={styles.grid3}>
               <div className={styles.divfoto}>
                 <div className={styles.grid3}>
                     <div className={styles.divfoto}>
@@ -42,7 +46,7 @@ export function Checkout() {
                 <h3 className={styles.texprecio}>15€</h3>
               </div>
 
-            </div>
+            </div> */}
           </div>
 
         </div>
@@ -54,7 +58,7 @@ export function Checkout() {
             <h3 className={styles.tex4}>Entrada:</h3>
           </div>
           <div className={styles.divtexto}> 
-            <h3 className={styles.tex5}>15€</h3>
+            <h3 className={styles.tex5}>{data.precio}€</h3>
           </div>
         </div>
 
@@ -63,7 +67,7 @@ export function Checkout() {
             <h3 className={styles.tex4}>Comisión:</h3>
           </div>
           <div className={styles.divtexto}> 
-            <h3 className={styles.tex5}>0,35€</h3>
+            <h3 className={styles.tex5}>0.35€</h3>
           </div> 
         </div>
 
@@ -72,11 +76,11 @@ export function Checkout() {
             <h3 className={styles.tex4}>Total:</h3>
           </div>
           <div className={styles.divtexto}> 
-            <h3 className={styles.tex5}>15,35€</h3>
+            <h3 className={styles.tex5}>{data.precio + 0.35}€</h3>
           </div> 
         </div>
 
-        <Link to="/credit-card" component={CreditCard} className={styles.nolink}>
+        <Link to="/credit-card" component={CreditCard} state={{datos:data}} className={styles.nolink}>
           <div className={styles.boton3}>
             <Botongen texto={"Pago con tarjeta"} />
           </div>

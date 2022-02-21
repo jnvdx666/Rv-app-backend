@@ -39,7 +39,6 @@ export function DiscotecaVenta() {
           <div  className={styles.bt1}><Botongen texto={"Sonora"} /></div>
         </Link> 
         </div>   
-        <h2>{d} y {mes} y {ciudad}</h2>
       </main>
     </div>
     );

@@ -35,7 +35,7 @@ export function App() {
           <Route exact path="/cal" element={<Calendario />}/>
           <Route exact path="/discotecas" element={<Discoteca />}/>
           <Route exact path="/lista-" element={<Listado />}/>
-          <Route exact path="/pre-checkout" element={<PreCheckout />}/>
+          <Route exact path="/pre-checkout-:productId" element={<PreCheckout />}/>
           <Route exact path="/checkout" element={<Checkout />}/>
           <Route exact path="/credit-card" element={<CreditCard />}/>
           <Route exact path="/gracias" element={<Final />}/>
