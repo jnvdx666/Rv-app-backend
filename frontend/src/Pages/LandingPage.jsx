@@ -24,7 +24,7 @@ export function LandingPage() {
 
     ReactGA.pageview(window.location.pathname);
     
-    const url = "http://85.85.68.198:8000/api/addticket/"
+    const url = "https://85.85.68.198:8000/api/addticket/"
     const {data} = useFetch(url);
 
     return(

@@ -14,7 +14,7 @@ export function ListaEntradas() {
   const location = useLocation()
   const { dia, mes, ciudad, discoteca } = location.state
 
-  const url = "http://85.85.68.198:8000/api/addticket/"
+  const url = "https://85.85.68.198:8000/api/addticket/"
 
   const diat = dia
 

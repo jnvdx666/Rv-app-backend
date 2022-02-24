@@ -11,7 +11,7 @@ import { QrReader } from 'react-qr-reader';
 
 export function Final() {
 
-    const url = "http://85.85.68.198:8000/api/addticket/"
+    const url = "https://85.85.68.198:8000/api/addticket/"
     const [dataqr, setData] = useState('No result');
 
 
