@@ -13,7 +13,6 @@ import {Final} from "./Pages/Final";
 import { EscQR } from "./Pages/EscQR";
 import { QRvista } from "./Pages/QRvista";
 import { DondeSalirVenta } from "./PagesVenta/DondSalir";
-
 import { CalendarioVenta } from "./PagesVenta/Calendario";
 import { DiscotecaVenta } from "./PagesVenta/Discoteca";
 import { PreCheckoutVenta } from "./PagesVenta/PreCheckout";
@@ -21,12 +20,20 @@ import {CreditCardVenta} from "./PagesVenta/CreditCard";
 import {FinalVenta} from "./PagesVenta/Final";
 import {DatosVenta} from "./PagesVenta/Datos";
 import { useState } from "react";
+import home from "./home1.svg";
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('G-88X2VEHEWK');
+ReactGA.pageview(window.location.pathname);
 
 export function App() {
-  
+  ReactGA.initialize('G-88X2VEHEWK');
   return (
     <Router>
       <header>
+        <Link to="/" component={LandingPage} className={styles.nolink}>
+          <img className={styles.img1} src={home} alt="" />
+        </Link>    
       </header>
       <main>
       <Routes>

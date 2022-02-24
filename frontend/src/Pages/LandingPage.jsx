@@ -13,10 +13,17 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { match } from "react";
 import useFetch from "react-fetch-hook"
+import ReactGA from 'react-ga';
+
+
+
+
 
 
 export function LandingPage() {
 
+    ReactGA.pageview(window.location.pathname);
+    
     const url = "http://85.85.68.198:8000/api/addticket/"
     const {data} = useFetch(url);
 
@@ -38,7 +45,7 @@ export function LandingPage() {
         <h3 className={styles.tit4}>Entradas Recomendadas</h3>
         <HoriCard className={styles.horicard} />
         <li className={styles.grid2}>
-          
+  
         {/* <Link to="/escQR" component={EscQR} className={styles.nolink}>
           <Botongen texto={"Escanear QR"}/>
         </Link>

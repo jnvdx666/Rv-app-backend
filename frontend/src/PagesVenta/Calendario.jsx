@@ -6,6 +6,7 @@ import { Botongen } from "../Components/Boton"
 import { DiscotecaVenta } from "./Discoteca";
 import './Calendar.css';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation  } from "react-router-dom";
+import ReactGA from 'react-ga';
 
 export function CalendarioVenta() {
 
@@ -20,10 +21,8 @@ export function CalendarioVenta() {
     const ciud = {ciudad}
     var mesletra = value.toLocaleString("es", { month: "long" });
     mesletra = capitalizeFirstLetter(mesletra)
-
+    ReactGA.pageview(window.location.pathname + window.location.search);
     return (
-
-        
 
         <div>
         <header>

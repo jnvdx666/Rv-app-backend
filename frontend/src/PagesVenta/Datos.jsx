@@ -75,7 +75,7 @@ export function DatosVenta() {
             <input className={styles.input1} onChange={(e) => handle(e)} id="n_tel_vend" value={data.n_tel_vend} type="n_tel_vend" name="n_tel_vend" pattern="\d*" placeholder="Nº de Telefono" required/>
           </div>
           <div className={styles.center}>
-              <button className={styles.botonsubmit}  type="submit">Ponla ya a la venta</button>
+              <button className={styles.botonsubmit}  type="submit">Siguiente</button>
             
           </div>  
         </form>

@@ -57,7 +57,7 @@ export function CreditCardVenta() {
 
         <Link to="/gracias-venta" component={FinalVenta} state={{ titulo, discoteca, dia, mes, ciudad, precio, instagram, n_tel_vend, estado}} className={styles.nolink}>
           <div className={styles.boton3}>
-            <Botongen texto={"Realizar pago"} />
+            <Botongen texto={"Ponla ya a la venta"} />
           </div>
         </Link>
     </main>

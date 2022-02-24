@@ -22,7 +22,7 @@ export function PreCheckout() {
         <h1 className={styles.text11}>{datos.titulo}</h1>
         <div className={styles.divimg2}><img className={styles.img2} src={copa1} alt="" /></div>
         <Link to="/checkout" component={Checkout} state={{data: datos}} className={styles.nolink}>
-          <div className={styles.boton1} ><Botongen texto={"Comprar Ya!"}/></div>
+          <div className={styles.boton1} ><Botongen texto={"¡Comprar ya!"}/></div>
         </Link>
       </main>
     </div>

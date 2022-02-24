@@ -35,6 +35,9 @@ export function Discoteca() {
         <Link to="/lista-"  component={Listado} state={{discoteca:"Sonora", dia:dia, mes:mes, ciudad: "Bilbao"}} className={styles.nolink}>
           <div  className={styles.bt1}><Botongen texto={"Sonora"} /></div>
         </Link> 
+        <Link to="/lista-"  component={Listado} state={{discoteca:"Rock", dia:dia, mes:mes, ciudad: "Bilbao"}} className={styles.nolink}>
+          <div  className={styles.bt1}><Botongen texto={"Rock"} /></div>
+        </Link> 
         </div>   
       </main>
     </div>
