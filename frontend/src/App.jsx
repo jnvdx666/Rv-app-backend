@@ -23,11 +23,12 @@ import { useState } from "react";
 import home from "./home1.svg";
 import ReactGA from 'react-ga';
 
-ReactGA.initialize('G-34GRDLRQ24');
-ReactGA.pageview(window.location.pathname);
+ReactGA.initialize('G-CSN27MJY59');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 export function App() {
-  ReactGA.initialize('G-34GRDLRQ24');
+  ReactGA.pageview(window.location.pathname + window.location.search);
+  ReactGA.initialize('G-CSN27MJY59');
   return (
     <Router>
       <header>
