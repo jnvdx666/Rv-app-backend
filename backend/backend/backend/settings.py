@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     "sslserver",
+    'letsencrypt',
+    'acme_challenge',
+    'django_extensions',
     'rest_framework',
     'addticket',
 ]

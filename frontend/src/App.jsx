@@ -22,6 +22,10 @@ import {DatosVenta} from "./PagesVenta/Datos";
 import { useState } from "react";
 import home from "./home1.svg";
 import ReactGA from 'react-ga';
+import Amplify from "aws-amplify";
+import awsExports from "./aws-exports";
+
+Amplify.configure(awsExports);
 
 ReactGA.initialize('G-CSN27MJY59');
 ReactGA.pageview(window.location.pathname + window.location.search);

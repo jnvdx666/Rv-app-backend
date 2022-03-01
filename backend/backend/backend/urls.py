@@ -17,10 +17,15 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from addticket import views
+from django.urls import include, re_path
+
 
 router = routers.DefaultRouter()
 router.register(r'addticket', views.addticketView, 'addticket')
 router.register(r'discotecas', views.discotecasView, 'discotecas')
+re_path(r'^\.well-known/', include('letsencrypt.urls'))
+re_path(r'^.well-known/acme-challenge/', include('acme_challenge.urls')),
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
