@@ -15,7 +15,7 @@ import { match } from "react";
 import useFetch from "react-fetch-hook"
 import ReactGA from 'react-ga';
 import Amplify from "aws-amplify";
-import awsExports from "./aws-exports";
+import awsExports from "../aws-exports";
 
 Amplify.configure(awsExports);
 
@@ -31,9 +31,9 @@ export function LandingPage() {
     const url = "https://85.85.68.198:8000/api/addticket/"
     const {data} = useFetch(url);
 
-    useEffect (() => {
-      API.get()
-    }, [])
+    // useEffect (() => {
+    //   API.get()
+    // }, [])
 
     return(
         <div>
