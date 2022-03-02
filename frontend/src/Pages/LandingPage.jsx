@@ -15,6 +15,7 @@ import { match } from "react";
 import useFetch from "react-fetch-hook"
 import ReactGA from 'react-ga';
 import Amplify from "aws-amplify";
+import {Hub} from "aws-amplify";
 import awsExports from "../aws-exports";
 import { DataStore } from '@aws-amplify/datastore';
 import { Discotecas, Addticket } from '../models';
@@ -24,33 +25,45 @@ Amplify.configure(awsExports);
 
 export function LandingPage() {
 
-      ReactGA.pageview(window.location.pathname);
+      // const listener = Hub.listen("datastore", async hubData => {
+      //   const  { event, data } = hubData.payload;
+      //   if (event === "ready") {
+      //     // do something here once the data is synced from the cloud
+          
+      //   }
+      // })
+      
+      // Remove listener
+      // listener();
 
-      useEffect(() => {
-        fetchDiscotecas()
-        fetchTickets()
-      }, [])
-      
-      
+      ReactGA.pageview(window.location.pathname);
+ 
       const [data, setData] = useState([])
       const [dataTickets, setDatatickets] = useState([])
-      const [dataf, setDataf] = useState([data, setData])
 
-      const fetchData = async () => {
-        try {
-          setDataf(data)
-        } catch (err) {
-          console.log('error fetching') }
+      const fetchDiscotecas =  Hub.listen("datastore", async hubData => {
+        const  { event, data } = hubData.payload;
+        if (event === "ready") {
+          // do something here once the data is synced from the cloud
+          try {
+                const discotecasData = await DataStore.query(Discotecas);
+                console.log(discotecasData)
+                setData(discotecasData)
+              } catch (err) {
+                console.log('error fetching') }
         }
+      })
 
-      const fetchDiscotecas = async () => {
-        try {
-          const discotecasData = await DataStore.query(Discotecas);
-          console.log(discotecasData)
-          setData(discotecasData)
-        } catch (err) {
-          console.log('error fetching') }
-        }
+
+
+      // const fetchDiscotecas = async () => {
+      //   try {
+      //     const discotecasData = await DataStore.query(Discotecas);
+      //     console.log(discotecasData)
+      //     setData(discotecasData)
+      //   } catch (err) {
+      //     console.log('error fetching') }
+      //   }
 
       const fetchTickets = async () => {
         try {
@@ -61,14 +74,13 @@ export function LandingPage() {
           console.log('error fetching') }
         }
 
-      useEffect(() => {
-        fetchDiscotecas()
-        fetchTickets()
-        fetchData()
-      }, [])
+        useEffect(() => {
+          fetchDiscotecas()
+          fetchTickets()
+        }, [])
 
       if (data.length > 0) {
-        var dato = dataf
+        var dato = data
         console.log("aws correcto")
       }
 
