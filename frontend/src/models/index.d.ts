@@ -28,7 +28,7 @@ export declare class Addticket {
   readonly titulo?: string;
   readonly discoteca?: string;
   readonly ciudad?: string;
-  readonly di?: string;
+  readonly dia?: string;
   readonly mes?: string;
   readonly precio?: number;
   readonly instagram?: string;

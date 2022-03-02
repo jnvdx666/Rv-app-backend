@@ -104,8 +104,8 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "di": {
-                    "name": "di",
+                "dia": {
+                    "name": "dia",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -198,5 +198,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "492ad369e51ea244fcf63b7f44d1b126"
+    "version": "787a199bef0a74980eb311e5fd831566"
 };
