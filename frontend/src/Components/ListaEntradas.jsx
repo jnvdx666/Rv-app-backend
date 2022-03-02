@@ -7,36 +7,47 @@ import { PreCheckout} from "../Pages/PreCheckout";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation} from "react-router-dom";
 import useFetch from "react-fetch-hook"
 import React,{useState, useEffect} from 'react';
-import axios from "axios";
+import { DataStore } from '@aws-amplify/datastore';
+import { Discotecas, Addticket } from '../models';
 
 export function ListaEntradas() {
 
   const location = useLocation()
   const { dia, mes, ciudad, discoteca } = location.state
 
-  const url = "https://85.85.68.198:8000/api/addticket/"
+  const [data, setData] = useState([])
+  const [dataTickets, setDatatickets] = useState([])
 
-  const diat = dia
+  const fetchDiscotecas = async () => {
+    try {
+      const discotecasData = await DataStore.query(Discotecas);
+      console.log(discotecasData)
+      setData(discotecasData)
+    } catch (err) {
+      console.log('error fetching') }
+    }
 
-  const [users, setUsers] = useState([])
-
-  const fetchData = async () => {
-    const response = await fetch(url)
-    const data = await response.json()
-    setUsers(data)
-  }
+  const fetchTickets = async () => {
+    try {
+      const ticketsData = await DataStore.query(Addticket);
+      console.log(ticketsData)
+      setDatatickets(ticketsData)
+    } catch (err) {
+      console.log('error fetching') }
+    }
 
   useEffect(() => {
-    fetchData()
+    fetchDiscotecas()
+    fetchTickets()
   }, [])
 
   if (dia != false && mes != false){
-    var newArray = users.filter(function (el) {
+    var newArray = dataTickets.filter(function (el) {
       return el.discoteca == discoteca && el.dia == dia && el.mes == mes && el.estado == false});
   }
 
   if (dia == false && mes == false){
-    var newArray = users.filter(function (el) {
+    var newArray = dataTickets.filter(function (el) {
       return el.discoteca == discoteca && el.estado == false});
   }
 
