@@ -6,12 +6,14 @@ import { Checkout } from "./Checkout"
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import { QrReader } from 'react-qr-reader';
-
+import { DataStore } from '@aws-amplify/datastore';
+import { Addticket } from '../models';
 
 
 export function Final() {
 
-    const url = "https://85.85.68.198:8000/api/addticket/"
+
+    const url = ""
     const [dataqr, setData] = useState('No result');
 
 
@@ -20,27 +22,28 @@ export function Final() {
 
     const url_id = url + data.id + '/'
 
-    fetch(url_id,
-    {
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    method: "PUT",
-    body: JSON.stringify({
-      titulo: data.titulo,
-      discoteca: data.discoteca,
-      dia: data.dia,
-      mes: data.mes,
-      ciudad: data.ciudad,
-      precio: data.precio,
-      instagram: data.instagram,
-      n_tel_vend: data.n_tel_vend,
-      estado: true,
-    })
-    })
-    .then(function(res){ console.log(res) })
-    .catch(function(res){ console.log(res) })
+    console.log(data.id)
+
+    const fetchTickets = async () => {
+      try {
+        const original = await DataStore.query(Addticket, data.id);
+        console.log(original)
+        const modified = await DataStore.save(
+          Addticket.copyOf(original, updated => {
+            updated.estado = true;
+          })
+        )
+        console.log(modified)
+      } catch (err) {
+        console.log('error fetching') }
+
+
+      }
+    
+    fetchTickets()
+    
+
+
 
     var newStr = ""
 
@@ -76,6 +79,9 @@ export function Final() {
           }
         }}
         style={{ width: '100%' }}
+        constraints={{
+          facingMode: "environment"
+      }}
       />
       <p>{dataqr}</p>
         {/* <div className={styles.divimg2}><img className={styles.img2} src={donut} alt="" /></div> */}
