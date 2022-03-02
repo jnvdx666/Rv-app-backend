@@ -41,7 +41,7 @@ export function LandingPage() {
       const [data, setData] = useState([])
       const [dataTickets, setDatatickets] = useState([])
 
-      const fetchDiscotecas =  Hub.listen("datastore", async hubData => {
+      const fetchDiscotecas1 =  Hub.listen("datastore", async hubData => {
         const  { event, data } = hubData.payload;
         if (event === "ready") {
           // do something here once the data is synced from the cloud
@@ -54,16 +54,29 @@ export function LandingPage() {
         }
       })
 
+      const fetchTickets1 =  Hub.listen("datastore", async hubData => {
+        const  { event, data } = hubData.payload;
+        if (event === "ready") {
+          // do something here once the data is synced from the cloud
+          try {
+            const ticketsData = await DataStore.query(Addticket);
+            console.log(ticketsData)
+            setDatatickets(ticketsData)
+          } catch (err) {
+            console.log('error fetching') }
+          }  
+      })
 
 
-      // const fetchDiscotecas = async () => {
-      //   try {
-      //     const discotecasData = await DataStore.query(Discotecas);
-      //     console.log(discotecasData)
-      //     setData(discotecasData)
-      //   } catch (err) {
-      //     console.log('error fetching') }
-      //   }
+
+      const fetchDiscotecas = async () => {
+        try {
+          const discotecasData = await DataStore.query(Discotecas);
+          console.log(discotecasData)
+          setData(discotecasData)
+        } catch (err) {
+          console.log('error fetching') }
+        }
 
       const fetchTickets = async () => {
         try {
@@ -73,6 +86,11 @@ export function LandingPage() {
         } catch (err) {
           console.log('error fetching') }
         }
+
+        useEffect(() => {
+          fetchDiscotecas1()
+          fetchTickets1()
+        }, [])
 
         useEffect(() => {
           fetchDiscotecas()
@@ -86,6 +104,7 @@ export function LandingPage() {
 
       if (data.length == 0) {
         var dato = "Error"
+        console.log("aws incorrecto")
       }
 
     return(
