@@ -3,6 +3,8 @@ import styles from "./Final.module.css";
 import { Botongen } from "../Components/Boton";
 import donut from "./qrt.png";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
+import { DataStore } from '@aws-amplify/datastore';
+import { Addticket } from '../models';
 
 
 export function FinalVenta() {
@@ -19,27 +21,20 @@ export function FinalVenta() {
     n_tel_vend,
     estado } = location.state
 
-    fetch(url,
-{
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    method: "POST",
-    body: JSON.stringify({
-      titulo: titulo,
-      discoteca: discoteca,
-      dia: dia,
-      mes: mes,
-      ciudad: ciudad,
-      precio: precio,
-      instagram: instagram,
-      n_tel_vend: n_tel_vend,
-      estado: false
+    DataStore.save(
+      new Addticket({
+      "titulo": titulo,
+      "discoteca": discoteca,
+      "ciudad": ciudad,
+      "dia": dia,
+      "mes": mes,
+      "precio": parseFloat(precio),
+      "instagram": instagram,
+      "n_tel_comp": "9999999999",
+      "n_tel_vend": n_tel_vend,
+      "estado": false
     })
-})
-.then(function(res){ console.log(res) })
-.catch(function(res){ console.log(res) })
+    );
 
 
     return(

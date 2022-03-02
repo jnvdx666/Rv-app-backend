@@ -10,11 +10,8 @@ import { useState } from "react";
 import useFetch from "react-fetch-hook"
 
 
-export function HoriCard() {
+export function HoriCard({data}) {
   
-  const url = "https://85.85.68.198:8000/api/discotecas/"
-  const {data} = useFetch(url);
-
   
   return (
     <ul className={styles.moviesGrid}>

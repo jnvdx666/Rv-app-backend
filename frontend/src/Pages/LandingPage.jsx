@@ -16,24 +16,50 @@ import useFetch from "react-fetch-hook"
 import ReactGA from 'react-ga';
 import Amplify from "aws-amplify";
 import awsExports from "../aws-exports";
+import { DataStore } from '@aws-amplify/datastore';
+import { Discotecas, Addticket } from '../models';
+
 
 Amplify.configure(awsExports);
 
-
-
-
-
-
 export function LandingPage() {
 
-    ReactGA.pageview(window.location.pathname);
-    
-    const url = "https://85.85.68.198:8000/api/addticket/"
-    const {data} = useFetch(url);
+      ReactGA.pageview(window.location.pathname);
+      
+      const [data, setData] = useState([])
+      const [dataTickets, setDatatickets] = useState([])
 
-    // useEffect (() => {
-    //   API.get()
-    // }, [])
+      const fetchDiscotecas = async () => {
+        try {
+          const discotecasData = await DataStore.query(Discotecas);
+          console.log(discotecasData)
+          setData(discotecasData)
+        } catch (err) {
+          console.log('error fetching') }
+        }
+
+      const fetchTickets = async () => {
+        try {
+          const ticketsData = await DataStore.query(Addticket);
+          console.log(ticketsData)
+          setDatatickets(ticketsData)
+        } catch (err) {
+          console.log('error fetching') }
+        }
+
+      useEffect(() => {
+        fetchDiscotecas()
+        fetchTickets()
+      }, [])
+
+      if (data.length > 0) {
+        var dato = data
+        console.log("aws correcto")
+      }
+
+      if (data.length == 0) {
+        var dato = "Error"
+      }
 
     return(
         <div>
@@ -41,7 +67,7 @@ export function LandingPage() {
         <div><img className={styles.logorv}  src={image} alt="" /></div>
         <h3 className={styles.fina}>LAS MEJORES ENTRADAS A LAS MEJORES DISCOTECAS</h3>
         <li className={styles.grid}>
-        <Link to="/dnd-salir" component={DondeSalir} state={{datos: data}} className={styles.nolink}>
+        <Link to="/dnd-salir" component={DondeSalir} state={{datos: dataTickets}} className={styles.nolink}>
           <Botongen texto={"¡Compralas ya!"}/>
         </Link>
 
@@ -51,7 +77,7 @@ export function LandingPage() {
         
         </li>
         <h3 className={styles.tit4}>Entradas Recomendadas</h3>
-        <HoriCard className={styles.horicard} />
+        <HoriCard data={data} className={styles.horicard} />
         <li className={styles.grid2}>
   
         {/* <Link to="/escQR" component={EscQR} className={styles.nolink}>
