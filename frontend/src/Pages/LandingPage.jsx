@@ -25,9 +25,23 @@ Amplify.configure(awsExports);
 export function LandingPage() {
 
       ReactGA.pageview(window.location.pathname);
+
+      useEffect(() => {
+        fetchDiscotecas()
+        fetchTickets()
+      }, [])
+      
       
       const [data, setData] = useState([])
       const [dataTickets, setDatatickets] = useState([])
+      const [dataf, setDataf] = useState([data, setData])
+
+      const fetchData = async () => {
+        try {
+          setDataf(data)
+        } catch (err) {
+          console.log('error fetching') }
+        }
 
       const fetchDiscotecas = async () => {
         try {
@@ -50,10 +64,11 @@ export function LandingPage() {
       useEffect(() => {
         fetchDiscotecas()
         fetchTickets()
+        fetchData()
       }, [])
 
       if (data.length > 0) {
-        var dato = data
+        var dato = dataf
         console.log("aws correcto")
       }
 
