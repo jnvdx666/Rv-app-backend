@@ -1,9 +1,9 @@
 import styles from "./Final.module.css";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import { DataStore } from '@aws-amplify/datastore';
-import { Addticket } from '../models';
-import QRCode from "react-qr-code";
+ import QRCode from "react-qr-code";
 import { useEffect, useState } from "react";
+import { Addticket } from '../models';
 import CryptoJS from "crypto-js";
 
 
@@ -11,7 +11,7 @@ import CryptoJS from "crypto-js";
 export function FinalVenta() {
     
 
-    var ciphertext = CryptoJS.AES.encrypt(JSON.stringify("hola"), 'hola').toString();
+    var ciphertext = CryptoJS.AES.encrypt(JSON.stringify("thanic"), '12345').toString();
     
     const location = useLocation()
     const {         
@@ -39,8 +39,6 @@ export function FinalVenta() {
         "estado": false
       })
     );
-
-
 
 
     return(
