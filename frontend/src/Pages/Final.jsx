@@ -1,8 +1,5 @@
-import { MoviesGrid } from "../Components/MoviesGrid";
 import styles from "./Final.module.css";
 import { Botongen } from "../Components/Boton";
-import donut from "./donut.svg";
-import { Checkout } from "./Checkout"
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import { QrReader } from 'react-qr-reader';
@@ -15,7 +12,6 @@ export function Final() {
 
     const url = ""
     const [dataqr, setData] = useState('No result');
-
 
     const location = useLocation()
     const { data } = location.state
@@ -36,15 +32,10 @@ export function Final() {
         console.log(modified)
       } catch (err) {
         console.log('error fetching') }
-
-
       }
     
     fetchTickets()
     
-
-
-
     var newStr = ""
 
     if (data.instagram.charAt(0) == '@') {

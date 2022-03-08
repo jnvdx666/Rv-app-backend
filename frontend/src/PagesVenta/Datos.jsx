@@ -13,6 +13,9 @@ import { useHistory } from "react-router-dom";
 
 
 export function DatosVenta() {
+  
+    let titulo1 = ""
+    
     const { register, handleSubmit, watch, errors } = useForm();
     const location = useLocation()
     const { diat, mest, ciudadt, discoteca } = location.state
@@ -40,11 +43,13 @@ export function DatosVenta() {
         console.log(newData)
     }
 
+    
+
     function submit(e) {
         e.preventDefault();
 
         navigate('/credit-card-venta', {state:{
-        titulo: "Entrada" + " " + discoteca + " " + diat + " " + "de" + " " + mest,
+        titulo: titulo1, 
         discoteca:discoteca,
         dia: diat,
         mes: mest,
@@ -54,7 +59,12 @@ export function DatosVenta() {
         n_tel_vend: data.n_tel_vend,
         estado: false}});
     }  
-    return(
+
+    console.log(discoteca)
+
+    if (discoteca != "Otros") {
+      titulo1 = "Entrada" + " " + discoteca + " " + diat + " " + "de" + " " + mest
+      return(
         <div>
       <header>
       </header>
@@ -83,4 +93,42 @@ export function DatosVenta() {
       </main>
     </div>
     );
+    }
+
+    if (discoteca == "Otros") {
+      titulo1 = data.titulo
+      return(
+        <div>
+      <header>
+      </header>
+      <main>
+        <div className={styles.div1}>
+          <img className={styles.img1} src="https://lh5.googleusercontent.com/p/AF1QipMQyHP8poRIAkHSksaCFHoT4wD7dhOzfRujRfU_" alt="" />
+        </div>
+        <h1 className={styles.text11}>{data.titulo} {diat} de {mest}</h1>
+        <form onSubmit={(e) => submit(e)}>
+        <div>
+            <input className={styles.input1} onChange={(e) => handle(e)} id="titulo" value={data.titulo} type="text" name="titulo" placeholder="Titulo" required />
+          </div>
+          <div>
+            <input className={styles.input1} onChange={(e) => handle(e)} id="precio" value={data.precio} type="number" min="0" name="precio" pattern="\d*" placeholder="Precio" required />
+          </div>
+          <div>
+            <input className={styles.input1} onChange={(e) => handle(e)} id="instagram" value={data.instagram} type="text" name="instagram" placeholder="@tu_instagram" required/>
+          </div>
+          <div>
+            <input className={styles.input1} onChange={(e) => handle(e)} id="n_tel_vend" value={data.n_tel_vend} type="n_tel_vend" name="n_tel_vend" pattern="\d*" placeholder="Nº de Telefono" required/>
+          </div>
+          <div className={styles.center}>
+              <button className={styles.botonsubmit}  type="submit">Siguiente</button>
+            
+          </div>  
+        </form>
+
+      </main>
+    </div>
+    );
+    }
+    
+    
   }

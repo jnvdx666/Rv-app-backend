@@ -2,6 +2,7 @@ import { MoviesGrid } from "../Components/MoviesGrid";
 import styles from "./Discoteca.module.css";
 import { Botongen } from "../Components/Boton"
 import { Listado } from "./Listado"
+import {Eventos} from "./Eventos"
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 
 export function Discoteca() {
@@ -17,6 +18,10 @@ export function Discoteca() {
       </header>
       <main>
         <div className={styles.dv1}>
+        <Link to="/eventos"  component={Eventos} state={{discoteca:"Otros", dia:dia, mes:mes, ciudad: "Bilbao"}} className={styles.nolink}>
+          <div  className={styles.bt1}><Botongen texto={"Otros eventos"} /></div>
+        </Link>
+        <hr className={styles.barra} />
         <Link to="/lista-"  component={Listado} state={{discoteca:"Moma", dia:dia, mes:mes, ciudad: "Bilbao"}} className={styles.nolink}>
           <div  className={styles.bt1}><Botongen texto={"Moma"} /></div>
         </Link>
