@@ -122,7 +122,7 @@ export function LandingPage() {
         </Link>
         
         </li>
-        <h3 className={styles.tit4}>Entradas Recomendadas</h3>
+        <h3 className={styles.tit4}>Discotecas Recomendadas</h3>
         <HoriCard data={data} className={styles.horicard} />
         <li className={styles.grid2}>
   

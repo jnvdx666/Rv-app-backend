@@ -10,6 +10,7 @@ import { PreCheckout } from "./Pages/PreCheckout";
 import { Checkout } from "./Pages/Checkout";
 import {CreditCard} from "./Pages/CreditCard";
 import {Final} from "./Pages/Final";
+import {Eventos} from "./Pages/Eventos";
 import { EscQR } from "./Pages/EscQR";
 import { QRvista } from "./Pages/QRvista";
 import { DondeSalirVenta } from "./PagesVenta/DondSalir";
@@ -52,6 +53,7 @@ export function App() {
           <Route exact path="/pre-checkout-:productId" element={<PreCheckout />}/>
           <Route exact path="/checkout" element={<Checkout />}/>
           <Route exact path="/credit-card" element={<CreditCard />}/>
+          <Route exact path="/eventos" element={<Eventos />}/>
           <Route exact path="/gracias" element={<Final />}/>
           <Route exact path="/escQR" element={<EscQR />}/>
           <Route exact path="/mostrarQR" element={<QRvista />}/>
