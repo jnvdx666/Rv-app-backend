@@ -4,8 +4,9 @@ import { DataStore } from '@aws-amplify/datastore';
 import { Addticket } from '../models';
 import QRCode from "react-qr-code";
 import { useEffect, useState } from "react";
+import CryptoJS from "crypto-js";
 
-var CryptoJS = require("crypto-js");
+
 
 export function FinalVenta() {
     
