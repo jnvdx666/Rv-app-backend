@@ -10,7 +10,7 @@ export function Eventos() {
     
   
     const location = useLocation()
-    const { datos } = location.state
+    const { discoteca, dia, mes, ciudad }= location.state
     
     return(
         <div>
@@ -22,7 +22,7 @@ export function Eventos() {
           <img className={styles.img1} src="https://bizkaiaarena.bilbaoexhibitioncentre.com/wp-content/uploads/sites/34/2021/11/ctangana-bizkaia-1.jpg" alt="" />
         </div>
         <h2 className={styles.text11}>Haz click para ver disponibilidad</h2>
-        <Link to="/lista-" component={Listado} state={{data: datos}} className={styles.nolink}>
+        <Link to="/lista-" component={Listado} state={{discoteca:discoteca, dia:dia, mes:mes, ciudad: "Bilbao"}} className={styles.nolink}>
           <div className={styles.boton1} ><Botongen texto={"Compra tus entradas"}/></div>
         </Link>
       </main>
