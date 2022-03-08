@@ -1,13 +1,14 @@
-import { MoviesGrid } from "../Components/MoviesGrid";
 import styles from "./CreditCard.module.css";
 import { Botongen } from "../Components/Boton";
-import copa1 from "./1copa.svg";
 import Tarjetas from "./Tarjetas.svg";
 import { FinalVenta } from "./Final"
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
-
+import { useEffect, useState } from "react";
+import { DataStore } from '@aws-amplify/datastore';
+import { Addticket } from '../models';
 
 export function CreditCardVenta() {
+
   const location = useLocation()
   const {         
   titulo,
