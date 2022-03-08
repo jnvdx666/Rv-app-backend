@@ -29,6 +29,7 @@ import { DataStore } from '@aws-amplify/datastore';
 import Analytics from '@aws-amplify/analytics';
 
 
+
 Amplify.configure(awsExports);
 DataStore.start();
 
