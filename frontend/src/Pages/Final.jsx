@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react
 import { QrReader } from 'react-qr-reader';
 import { DataStore } from '@aws-amplify/datastore';
 import { Addticket } from '../models';
+import CryptoJS from "crypto-js";
 
 
 export function Final() {
