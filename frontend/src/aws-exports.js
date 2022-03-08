@@ -36,7 +36,9 @@ const awsmobile = {
         "EMAIL"
     ],
     "aws_user_files_s3_bucket": "rv-app-backend-storage213213-staging",
-    "aws_user_files_s3_bucket_region": "us-east-1"
+    "aws_user_files_s3_bucket_region": "us-east-1",
+    "aws_mobile_analytics_app_id": "53e2c5bad49c4b52b5118cc081769400",
+    "aws_mobile_analytics_app_region": "us-east-1"
 };
 
 

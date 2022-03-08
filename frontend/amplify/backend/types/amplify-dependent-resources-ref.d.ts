@@ -22,5 +22,12 @@ export type AmplifyDependentResourcesAttributes = {
             "BucketName": "string",
             "Region": "string"
         }
+    },
+    "analytics": {
+        "rvappbackendfrontend": {
+            "Region": "string",
+            "Id": "string",
+            "appName": "string"
+        }
     }
 }
