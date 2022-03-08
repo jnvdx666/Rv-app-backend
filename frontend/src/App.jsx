@@ -31,8 +31,18 @@ import Analytics from '@aws-amplify/analytics';
 
 Amplify.configure(awsExports);
 DataStore.start();
-ReactGA.initialize('G-CSN27MJY59');
-ReactGA.pageview(window.location.pathname + window.location.search);
+
+const analyticsConfig = {
+  AWSPinpoint: {
+        // Amazon Pinpoint App Client ID
+        appId: '53e2c5bad49c4b52b5118cc081769400',
+        // Amazon service region
+        region: 'us-east-1',
+        mandatorySignIn: false,
+  }
+}
+
+Analytics.configure(analyticsConfig)
 
 Analytics.autoTrack('session', {
     enable: true,
