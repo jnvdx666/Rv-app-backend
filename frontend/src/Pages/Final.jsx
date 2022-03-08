@@ -51,8 +51,9 @@ export function Final() {
     }
 
     function validador() {
-      var bytes = CryptoJS.AES.decrypt(dataqr, 'hola');
-      if (bytes == "hola") {
+      var bytes = CryptoJS.AES.decrypt(dataqr, '12345');
+      var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+      if (decryptedData == "thanic") {
         setAcept = "Confirmado"
       }
     }
@@ -87,6 +88,7 @@ export function Final() {
       }}
       />
       <p>{acept}</p>
+      <p>{dataqr}</p>
         {/* <div className={styles.divimg2}><img className={styles.img2} src={donut} alt="" /></div> */}
         <h3 className={styles.new1}>Este es el instagram de tu vendedor:</h3>
         <a href={url_instagram} target="_blank" className={styles.nolink}><div className={styles.boton1}><Botongen texto={data.instagram}/></div></a>
