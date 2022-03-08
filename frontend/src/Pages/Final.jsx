@@ -1,6 +1,6 @@
 import styles from "./Final.module.css";
 import { Botongen } from "../Components/Boton";
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import { QrReader } from 'react-qr-reader';
 import { DataStore } from '@aws-amplify/datastore';
@@ -56,6 +56,11 @@ export function Final() {
         setAcept = "Confirmado"
       }
     }
+
+    useEffect(() => {    
+      // Actualiza el título del documento usando la API del navegador  
+      validador()  
+      });
   
     const url_instagram = "https://www.instagram.com/" + newStr
 
