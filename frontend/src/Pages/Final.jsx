@@ -48,8 +48,14 @@ export function Final() {
       newStr = str
     }
 
+    if (data.id == dataqr) {
+      var aceptacion = "Transacción Verficada"
+    }
 
-
+    if (data.id != dataqr) {
+      aceptacion = "Transacción en Proceso de Verificación"
+    }
+  
     const url_instagram = "https://www.instagram.com/" + newStr
 
     return(
@@ -74,7 +80,7 @@ export function Final() {
           facingMode: "environment"
       }}
       />
-      <p>{dataqr}</p>
+      <p>{aceptacion}</p>
         {/* <div className={styles.divimg2}><img className={styles.img2} src={donut} alt="" /></div> */}
         <h3 className={styles.new1}>Este es el instagram de tu vendedor:</h3>
         <a href={url_instagram} target="_blank" className={styles.nolink}><div className={styles.boton1}><Botongen texto={data.instagram}/></div></a>
