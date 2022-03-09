@@ -13,7 +13,7 @@ export function Final() {
 
     const url = ""
     const [dataqr, setData] = useState('No result');
-    const [acept, setAcept] = useState('Espera')
+    const [datavalid, setValid] = useState('No valido')
 
     const location = useLocation()
     const { data } = location.state
@@ -50,19 +50,6 @@ export function Final() {
       newStr = str
     }
 
-    function validador() {
-      var bytes = CryptoJS.AES.decrypt(dataqr, '12345');
-      var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-      if (decryptedData == "thanic") {
-        setAcept = "Confirmado"
-      }
-    }
-
-    useEffect(() => {    
-      // Actualiza el título del documento usando la API del navegador  
-      validador()  
-      });
-  
     const url_instagram = "https://www.instagram.com/" + newStr
 
     return(
@@ -76,6 +63,9 @@ export function Final() {
         onResult={(result, error) => {
           if (!!result) {
             setData(result?.text);
+            if(result?.text == "Hola") {
+              setValid("Transacción exitosa")
+            }
           }
 
           if (!!error) {
@@ -87,7 +77,7 @@ export function Final() {
           facingMode: "environment"
       }}
       />
-      <p>{acept}</p>
+      <p>{datavalid}</p>
       <p>{dataqr}</p>
         {/* <div className={styles.divimg2}><img className={styles.img2} src={donut} alt="" /></div> */}
         <h3 className={styles.new1}>Este es el instagram de tu vendedor:</h3>
