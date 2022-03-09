@@ -65,7 +65,9 @@ export function Final() {
             setData(result?.text);
             var bytes  = CryptoJS.AES.decrypt(result?.text.toString(), '12345');
             var plaintext = bytes.toString(CryptoJS.enc.Utf8);
-            if(plaintext == "thanic") {
+            var resultado = plaintext.replace(/['"]+/g, '')
+            console.log(plaintext.replace(/['"]+/g, ''))
+            if(resultado == 'thanic') {
               setValid("Transacción exitosa")
             }
           }

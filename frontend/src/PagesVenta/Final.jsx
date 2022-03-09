@@ -11,7 +11,12 @@ import CryptoJS from "crypto-js";
 export function FinalVenta() {
     
 
-    var ciphertext = CryptoJS.AES.encrypt(JSON.stringify("thanic"), '12345').toString();
+    var ciphertext = CryptoJS.AES.encrypt(JSON.stringify("thanic"), '12345').toString()
+    console.log(ciphertext)
+    var escaneo = "U2FsdGVkX19qFQob23sFMLNicUAcbvduAqkN3d7HVqA="
+    var bytes  = CryptoJS.AES.decrypt(escaneo.toString(), '12345');
+    var plaintext = bytes.toString(CryptoJS.enc.Utf8);
+    console.log(plaintext.replace(/['"]+/g, ''))
     
     const location = useLocation()
     const {         
@@ -46,7 +51,7 @@ export function FinalVenta() {
       <header>
       </header>
       <main>
-        <h2></h2>
+        <h2>{ciphertext}</h2>
         <h1 className={styles.text11}>¡Muchas gracias! </h1>
         <h2 className={styles.text11}>Tienes que mostrarle este QR a tu comprador para finalizar la transacción</h2>
         <div className={styles.img1}>
