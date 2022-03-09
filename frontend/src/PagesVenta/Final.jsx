@@ -50,7 +50,7 @@ export function FinalVenta() {
         <h1 className={styles.text11}>¡Muchas gracias! </h1>
         <h2 className={styles.text11}>Tienes que mostrarle este QR a tu comprador para finalizar la transacción</h2>
         <div className={styles.img1}>
-        <QRCode value={ciphertext} size={300} fgColor="#000000" bgColor="#fff" level="H" className={styles.codigo}/>
+        <QRCode value="Hola" size={300} fgColor="#000000" bgColor="#fff" level="H" className={styles.codigo}/>
         </div>
       </main>
     </div>
