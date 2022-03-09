@@ -63,7 +63,9 @@ export function Final() {
         onResult={(result, error) => {
           if (!!result) {
             setData(result?.text);
-            if(result?.text == "Hola") {
+            var bytes  = CryptoJS.AES.decrypt(result?.text.toString(), '12345');
+            var plaintext = bytes.toString(CryptoJS.enc.Utf8);
+            if(plaintext == "thanic") {
               setValid("Transacción exitosa")
             }
           }
