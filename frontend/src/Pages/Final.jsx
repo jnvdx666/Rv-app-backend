@@ -36,8 +36,6 @@ export function Final() {
         console.log('error fetching') }
       }
     
-    fetchTickets()
-    
     var newStr = ""
 
     if (data.instagram.charAt(0) == '@') {
@@ -69,6 +67,7 @@ export function Final() {
             console.log(plaintext.replace(/['"]+/g, ''))
             if(resultado == 'thanic') {
               setValid("Transacción exitosa")
+              fetchTickets()
             }
           }
 
@@ -82,7 +81,6 @@ export function Final() {
       }}
       />
       <p>{datavalid}</p>
-      <p>{dataqr}</p>
         {/* <div className={styles.divimg2}><img className={styles.img2} src={donut} alt="" /></div> */}
         <h3 className={styles.new1}>Este es el instagram de tu vendedor:</h3>
         <a href={url_instagram} target="_blank" className={styles.nolink}><div className={styles.boton1}><Botongen texto={data.instagram}/></div></a>

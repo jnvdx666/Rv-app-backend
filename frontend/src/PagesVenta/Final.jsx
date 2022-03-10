@@ -51,7 +51,6 @@ export function FinalVenta() {
       <header>
       </header>
       <main>
-        <h2>{ciphertext}</h2>
         <h1 className={styles.text11}>¡Muchas gracias! </h1>
         <h2 className={styles.text11}>Tienes que mostrarle este QR a tu comprador para finalizar la transacción</h2>
         <div className={styles.img1}>
