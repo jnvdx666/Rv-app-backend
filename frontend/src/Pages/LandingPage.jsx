@@ -112,20 +112,24 @@ export function LandingPage() {
       <main>
         <div><img className={styles.logorv}  src={image} alt="" /></div>
         <h3 className={styles.fina}>LAS MEJORES ENTRADAS A LAS MEJORES DISCOTECAS</h3>
+        <div className={styles.padre}>
+        <div className={styles.center1}>
         <li className={styles.grid}>
-        <Link to="/dnd-salir" component={DondeSalir} state={{datos: dataTickets}} className={styles.nolink}>
+          <Link to="/dnd-salir" component={DondeSalir} state={{datos: dataTickets}} className={styles.nolink}>
           <Botongen texto={"¡Compralas ya!"}/>
         </Link>
 
         <Link to="/dnd-salir-venta" component={DondeSalirVenta} className={styles.nolink}>
           <Botongen texto={"¡Vendelas ya!"}/> 
-        </Link>
-        
+        </Link>        
         </li>
+        </div>
+        </div>
+
+
         <h3 className={styles.tit4}>Discotecas Recomendadas</h3>
         <HoriCard data={data} className={styles.horicard} />
-        <li className={styles.grid2}>
-  
+        
         {/* <Link to="/escQR" component={EscQR} className={styles.nolink}>
           <Botongen texto={"Escanear QR"}/>
         </Link>
@@ -134,7 +138,7 @@ export function LandingPage() {
           <Botongen texto={"Mostrar QR"} />
         </Link> */}
         
-         </li>
+         
       </main>
     </div>
     );
