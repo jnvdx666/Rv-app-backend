@@ -31,7 +31,7 @@ import Analytics from '@aws-amplify/analytics';
 
 
 Amplify.configure(awsExports);
-DataStore.start();
+
 
 const analyticsConfig = {
   AWSPinpoint: {
