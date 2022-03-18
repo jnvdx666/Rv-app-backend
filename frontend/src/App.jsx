@@ -20,6 +20,7 @@ import { PreCheckoutVenta } from "./PagesVenta/PreCheckout";
 import {CreditCardVenta} from "./PagesVenta/CreditCard";
 import {FinalVenta} from "./PagesVenta/Final";
 import {DatosVenta} from "./PagesVenta/Datos";
+import {Ordenador} from "./Pages/Ordenador";
 import { useState } from "react";
 import home from "./home1.svg";
 import ReactGA from 'react-ga';
@@ -67,37 +68,55 @@ Analytics.autoTrack('pageView', {
 export function App() {
   ReactGA.pageview(window.location.pathname + window.location.search);
   ReactGA.initialize('G-CSN27MJY59');
-  return (
-    <Router>
-      <header>
-        <Link to="/" component={LandingPage} className={styles.nolink}>
-          <img className={styles.img1} src={home} alt="" />
-        </Link>    
-      </header>
-      <main>
-      <Routes>
-          <Route exact path="/" element={<LandingPage />}/>
-          <Route exact path="/dnd-salir" element={<DondeSalir />}/>
-          <Route exact path="/cal" element={<Calendario />}/>
-          <Route exact path="/discotecas" element={<Discoteca />}/>
-          <Route exact path="/lista-" element={<Listado />}/>
-          <Route exact path="/pre-checkout-:productId" element={<PreCheckout />}/>
-          <Route exact path="/checkout" element={<Checkout />}/>
-          <Route exact path="/credit-card" element={<CreditCard />}/>
-          <Route exact path="/eventos" element={<Eventos />}/>
-          <Route exact path="/gracias" element={<Final />}/>
-          <Route exact path="/escQR" element={<EscQR />}/>
-          <Route exact path="/mostrarQR" element={<QRvista />}/>
-          <Route exact path="/dnd-salir-venta" element={<DondeSalirVenta />}/>
-          <Route exact path="/cal-venta" element={<CalendarioVenta />}/>
-          <Route exact path="/discotecas-venta" element={<DiscotecaVenta />}/>
-          <Route exact path="/pre-checkout-venta" element={<PreCheckoutVenta />}/>
-          <Route exact path="/credit-card-venta" element={<CreditCardVenta />}/>
-          <Route exact path="/gracias-venta" element={<FinalVenta />}/>
-          <Route exact path="/datos-venta" element={<DatosVenta />}/>
-      </Routes>
-      </main>
-      <footer className={styles.footer1}>POWERED BY <span className={styles.colorthanic}>THANIC®</span></footer>
-    </Router>
-  );
+
+  const isMobile = window.innerWidth <= 500;
+
+  if (isMobile) {
+      return (
+        <Router>
+          <header>
+            <Link to="/" component={LandingPage} className={styles.nolink}>
+              <img className={styles.img1} src={home} alt="" />
+            </Link>    
+          </header>
+          <main>
+          <Routes>
+              <Route exact path="/" element={<LandingPage />}/>
+              <Route exact path="/dnd-salir" element={<DondeSalir />}/>
+              <Route exact path="/cal" element={<Calendario />}/>
+              <Route exact path="/discotecas" element={<Discoteca />}/>
+              <Route exact path="/lista-" element={<Listado />}/>
+              <Route exact path="/pre-checkout-:productId" element={<PreCheckout />}/>
+              <Route exact path="/checkout" element={<Checkout />}/>
+              <Route exact path="/credit-card" element={<CreditCard />}/>
+              <Route exact path="/eventos" element={<Eventos />}/>
+              <Route exact path="/gracias" element={<Final />}/>
+              <Route exact path="/escQR" element={<EscQR />}/>
+              <Route exact path="/mostrarQR" element={<QRvista />}/>
+              <Route exact path="/dnd-salir-venta" element={<DondeSalirVenta />}/>
+              <Route exact path="/cal-venta" element={<CalendarioVenta />}/>
+              <Route exact path="/discotecas-venta" element={<DiscotecaVenta />}/>
+              <Route exact path="/pre-checkout-venta" element={<PreCheckoutVenta />}/>
+              <Route exact path="/credit-card-venta" element={<CreditCardVenta />}/>
+              <Route exact path="/gracias-venta" element={<FinalVenta />}/>
+              <Route exact path="/datos-venta" element={<DatosVenta />}/>
+          </Routes>
+          </main>
+          <footer className={styles.footer1}>POWERED BY <span className={styles.colorthanic}>THANIC®</span></footer>
+        </Router>
+      );
+  } 
+  else {
+    return (
+      <Router>
+        <main>
+        <Routes>
+            <Route exact path="/" element={<Ordenador />}/>
+        </Routes>
+        </main>
+      </Router>
+    );
+  }
 }
+
+  

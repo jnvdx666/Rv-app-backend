@@ -42,6 +42,9 @@ export function DiscotecaVenta() {
         <Link to="/datos-venta"  component={DatosVenta} state={{ diat: dia, mest: mes, ciudadt: ciudad, discoteca: "Sonora" }} className={styles.nolink}>
           <div  className={styles.bt1}><Botongen texto={"Sonora"} /></div>
         </Link> 
+        <Link to="/datos-venta"  component={DatosVenta} state={{ diat: dia, mest: mes, ciudadt: ciudad, discoteca: "Rock" }} className={styles.nolink}>
+          <div  className={styles.bt1}><Botongen texto={"Rock"} /></div>
+        </Link> 
         </div>   
       </main>
     </div>
