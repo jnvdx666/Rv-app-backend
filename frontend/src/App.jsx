@@ -74,15 +74,15 @@ export function App() {
   if (isMobile) {
       return (
         <Router>
-          <header>
+          {/* <header>
             <Link to="/" component={LandingPage} className={styles.nolink}>
               <img className={styles.img1} src={home} alt="" />
             </Link>    
-          </header>
+          </header> */}
           <main>
           <Routes>
               <Route exact path="/" element={<LandingPage />}/>
-              <Route exact path="/dnd-salir" element={<DondeSalir />}/>
+              {/* <Route exact path="/dnd-salir" element={<DondeSalir />}/>
               <Route exact path="/cal" element={<Calendario />}/>
               <Route exact path="/discotecas" element={<Discoteca />}/>
               <Route exact path="/lista-" element={<Listado />}/>
@@ -99,10 +99,10 @@ export function App() {
               <Route exact path="/pre-checkout-venta" element={<PreCheckoutVenta />}/>
               <Route exact path="/credit-card-venta" element={<CreditCardVenta />}/>
               <Route exact path="/gracias-venta" element={<FinalVenta />}/>
-              <Route exact path="/datos-venta" element={<DatosVenta />}/>
+              <Route exact path="/datos-venta" element={<DatosVenta />}/> */}
           </Routes>
           </main>
-          <footer className={styles.footer1}>POWERED BY <span className={styles.colorthanic}>THANIC®</span></footer>
+          {/* <footer className={styles.footer1}>POWERED BY <span className={styles.colorthanic}>THANIC®</span></footer> */}
         </Router>
       );
   } 

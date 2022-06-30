@@ -4,39 +4,16 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 
 
-type DiscotecasMetaData = {
+type AddTicket2MetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-type AddticketMetaData = {
-  readOnlyFields: 'createdAt' | 'updatedAt';
-}
-
-export declare class Discotecas {
+export declare class AddTicket2 {
   readonly id: string;
-  readonly nombre?: string;
-  readonly foto?: string;
-  readonly estado?: boolean;
-  readonly createdAt?: string;
-  readonly updatedAt?: string;
-  constructor(init: ModelInit<Discotecas, DiscotecasMetaData>);
-  static copyOf(source: Discotecas, mutator: (draft: MutableModel<Discotecas, DiscotecasMetaData>) => MutableModel<Discotecas, DiscotecasMetaData> | void): Discotecas;
-}
-
-export declare class Addticket {
-  readonly id: string;
-  readonly titulo?: string;
-  readonly discoteca?: string;
-  readonly ciudad?: string;
-  readonly dia?: string;
-  readonly mes?: string;
-  readonly precio?: number;
-  readonly instagram?: string;
-  readonly n_tel_comp?: string;
-  readonly n_tel_vend?: string;
-  readonly estado?: boolean;
-  readonly createdAt?: string;
-  readonly updatedAt?: string;
-  constructor(init: ModelInit<Addticket, AddticketMetaData>);
-  static copyOf(source: Addticket, mutator: (draft: MutableModel<Addticket, AddticketMetaData>) => MutableModel<Addticket, AddticketMetaData> | void): Addticket;
+  readonly nombre?: string | null;
+  readonly foto?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<AddTicket2, AddTicket2MetaData>);
+  static copyOf(source: AddTicket2, mutator: (draft: MutableModel<AddTicket2, AddTicket2MetaData>) => MutableModel<AddTicket2, AddTicket2MetaData> | void): AddTicket2;
 }

@@ -1,0 +1,5 @@
+type AddTicket2 @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  nombre: String
+  foto: String
+}

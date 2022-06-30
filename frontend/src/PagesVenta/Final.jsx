@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react
 import { DataStore } from '@aws-amplify/datastore';
  import QRCode from "react-qr-code";
 import { useEffect, useState } from "react";
-import { Addticket } from '../models';
+// import { Addticket } from '../models';
 import CryptoJS from "crypto-js";
 
 
@@ -30,20 +30,20 @@ export function FinalVenta() {
     n_tel_vend,
     estado } = location.state
 
-    const Post = DataStore.save(
-      new Addticket({
-        "titulo": titulo,
-        "discoteca": discoteca,
-        "ciudad": ciudad,
-        "dia": dia,
-        "mes": mes,
-        "precio": parseFloat(precio),
-        "instagram": instagram,
-        "n_tel_comp": "9999999999",
-        "n_tel_vend": n_tel_vend,
-        "estado": false
-      })
-    );
+    // const Post = DataStore.save(
+    //   new Addticket({
+    //     "titulo": titulo,
+    //     "discoteca": discoteca,
+    //     "ciudad": ciudad,
+    //     "dia": dia,
+    //     "mes": mes,
+    //     "precio": parseFloat(precio),
+    //     "instagram": instagram,
+    //     "n_tel_comp": "9999999999",
+    //     "n_tel_vend": n_tel_vend,
+    //     "estado": false
+    //   })
+    // );
 
 
     return(

@@ -5,7 +5,7 @@ import Amplify from "aws-amplify";
 import awsExports from "../aws-exports";
 import { API, graphqlOperation } from 'aws-amplify'
 import { DataStore } from '@aws-amplify/datastore';
-import { Discotecas } from '../models';
+// import { Discotecas } from '../models';
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -17,18 +17,18 @@ export function DondeSalir() {
 
     
     
-  const fetchActors = async () => {
-    try {
-      const discotecasData = await DataStore.query(Discotecas);
-      console.log(discotecasData)
-      setData(discotecasData)
-    } catch (err) {
-      console.log('error fetching actors') }
-    }
+  // const fetchActors = async () => {
+  //   try {
+  //     const discotecasData = await DataStore.query(Discotecas);
+  //     console.log(discotecasData)
+  //     setData(discotecasData)
+  //   } catch (err) {
+  //     console.log('error fetching actors') }
+  //   }
 
-    useEffect(() => {
-      fetchActors()
-    }, [])
+  //   useEffect(() => {
+  //     fetchActors()
+  //   }, [])
 
     if (data.length > 0) {
       var datos = data

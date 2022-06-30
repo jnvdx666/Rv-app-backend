@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation} from "react-
 import useFetch from "react-fetch-hook"
 import React,{useState, useEffect} from 'react';
 import { DataStore } from '@aws-amplify/datastore';
-import { Discotecas, Addticket } from '../models';
+// import { Discotecas, Addticket } from '../models';
 
 export function ListaEntradas() {
 
@@ -18,28 +18,28 @@ export function ListaEntradas() {
   const [data, setData] = useState([])
   const [dataTickets, setDatatickets] = useState([])
 
-  const fetchDiscotecas = async () => {
-    try {
-      const discotecasData = await DataStore.query(Discotecas);
-      console.log(discotecasData)
-      setData(discotecasData)
-    } catch (err) {
-      console.log('error fetching') }
-    }
+  // const fetchDiscotecas = async () => {
+  //   try {
+  //     const discotecasData = await DataStore.query(Discotecas);
+  //     console.log(discotecasData)
+  //     setData(discotecasData)
+  //   } catch (err) {
+  //     console.log('error fetching') }
+  //   }
 
-  const fetchTickets = async () => {
-    try {
-      const ticketsData = await DataStore.query(Addticket);
-      console.log(ticketsData)
-      setDatatickets(ticketsData)
-    } catch (err) {
-      console.log('error fetching') }
-    }
+  // const fetchTickets = async () => {
+  //   try {
+  //     const ticketsData = await DataStore.query(Addticket);
+  //     console.log(ticketsData)
+  //     setDatatickets(ticketsData)
+  //   } catch (err) {
+  //     console.log('error fetching') }
+  //   }
 
-  useEffect(() => {
-    fetchDiscotecas()
-    fetchTickets()
-  }, [])
+  // useEffect(() => {
+  //   fetchDiscotecas()
+  //   fetchTickets()
+  // }, [])
 
   if (dia != false && mes != false){
     var newArray = dataTickets.filter(function (el) {

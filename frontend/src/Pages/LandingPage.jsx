@@ -2,7 +2,7 @@ import { MoviesGrid } from "../Components/MoviesGrid";
 import { MovieCard } from "../Components/MovieCard";
 import { HoriCard } from "../Components/HoriCard";
 import styles from "./LandingPage.module.css";
-import { Botongen } from "../Components/Boton"
+import { Botongen } from "../Components/Boton";
 import { DondeSalirVenta } from "../PagesVenta/DondSalir";
 import { DondeSalir } from "./DondSalir";
 import { EscQR } from "./EscQR";
@@ -12,134 +12,37 @@ import image from "./logorv.svg";
 import { useEffect } from "react";
 import { useState } from "react";
 import { match } from "react";
-import useFetch from "react-fetch-hook"
-import ReactGA from 'react-ga';
+import useFetch from "react-fetch-hook";
+import ReactGA from "react-ga";
 import Amplify from "aws-amplify";
-import {Hub} from "aws-amplify";
+import { Hub } from "aws-amplify";
 import awsExports from "../aws-exports";
-import { DataStore } from '@aws-amplify/datastore';
-import { Discotecas, Addticket } from '../models';
-
+// import { DataStore } from "@aws-amplify/datastore";
+// import { Discotecas, Addticket } from "../models";
+import jul1 from "./FotosCal/STORIE JULIO.svg"
+import jul2 from "./FotosCal/STORIE JULIO 1.jpg"
+import ago1 from "./FotosCal/STORIE AGOSTO.svg"
+import ago2 from "./FotosCal/STORIE AGOSTO 1.jpg"
+import sep1 from "./FotosCal/STORIE SEPTIEMBRE.svg"
+import sep2 from "./FotosCal/STORIE SEPTIEMBRE.jpg"
+import oct1 from "./FotosCal/STORIE OCTUBRE.svg"
+import oct2 from "./FotosCal/STORIE OCTUBRE 1.jpg"
 
 Amplify.configure(awsExports);
 
 export function LandingPage() {
-
-      // const listener = Hub.listen("datastore", async hubData => {
-      //   const  { event, data } = hubData.payload;
-      //   if (event === "ready") {
-      //     // do something here once the data is synced from the cloud
-          
-      //   }
-      // })
-      
-      // Remove listener
-      // listener();
-
-      ReactGA.pageview(window.location.pathname);
- 
-      const [data, setData] = useState([])
-      const [dataTickets, setDatatickets] = useState([])
-
-      const fetchDiscotecas1 =  Hub.listen("datastore", async hubData => {
-        const  { event, data } = hubData.payload;
-        if (event === "ready") {
-          // do something here once the data is synced from the cloud
-          try {
-                const discotecasData = await DataStore.query(Discotecas);
-                console.log(discotecasData)
-                setData(discotecasData)
-              } catch (err) {
-                console.log('error fetching') }
-        }
-      })
-
-      const fetchTickets1 =  Hub.listen("datastore", async hubData => {
-        const  { event, data } = hubData.payload;
-        if (event === "ready") {
-          // do something here once the data is synced from the cloud
-          try {
-            const ticketsData = await DataStore.query(Addticket);
-            console.log(ticketsData)
-            setDatatickets(ticketsData)
-          } catch (err) {
-            console.log('error fetching') }
-          }  
-      })
-
-
-
-      const fetchDiscotecas = async () => {
-        try {
-          const discotecasData = await DataStore.query(Discotecas);
-          console.log(discotecasData)
-          setData(discotecasData)
-        } catch (err) {
-          console.log('error fetching') }
-        }
-
-      const fetchTickets = async () => {
-        try {
-          const ticketsData = await DataStore.query(Addticket);
-          console.log(ticketsData)
-          setDatatickets(ticketsData)
-        } catch (err) {
-          console.log('error fetching') }
-        }
-
-        useEffect(() => {
-          fetchDiscotecas1()
-          fetchTickets1()
-        }, [])
-
-        useEffect(() => {
-          fetchDiscotecas()
-          fetchTickets()
-        }, [])
-
-      if (data.length > 0) {
-        var dato = data
-        console.log("aws correcto")
-      }
-
-      if (data.length == 0) {
-        var dato = "Error"
-        console.log("aws incorrecto")
-      }
-
-    return(
-        <div>
+  return (
+    <div>
       <main>
-        <div><img className={styles.logorv}  src={image} alt="" /></div>
-        <h3 className={styles.fina}>LAS MEJORES ENTRADAS A LAS MEJORES DISCOTECAS</h3>
-        <div className={styles.padre}>
-        <div className={styles.center1}>
-        <li className={styles.grid}>
-          <Link to="/dnd-salir" component={DondeSalir} state={{datos: dataTickets}} className={styles.nolink}>
-          <Botongen texto={"¡Compralas ya!"}/>
-        </Link>
-
-        <Link to="/dnd-salir-venta" component={DondeSalirVenta} className={styles.nolink}>
-          <Botongen texto={"¡Vendelas ya!"}/> 
-        </Link>        
-        </li>
-        </div>
-        </div>
-
-
-        <h3 className={styles.tit4}>Discotecas Recomendadas</h3>
-        <HoriCard data={data} className={styles.horicard} />
-        
-        {/* <Link to="/escQR" component={EscQR} className={styles.nolink}>
-          <Botongen texto={"Escanear QR"}/>
-        </Link>
-
-        <Link to="/mostrarQR" component={QRvista} className={styles.nolink}>
-          <Botongen texto={"Mostrar QR"} />
-        </Link> */}
-        
-         
+        <img className={styles.img1} src={jul1} alt="" />
+        <img className={styles.img1} src={jul2} alt="" />
+        <img className={styles.img1} src={ago1} alt="" />
+        <img className={styles.img1} src={ago2} alt="" />
+        <img className={styles.img1} src={sep1} alt="" />
+        <img className={styles.img1} src={sep2} alt="" />
+        <img className={styles.img1} src={oct1} alt="" />
+        <img className={styles.img1} src={oct2} alt="" />
       </main>
     </div>
-    );
-  }
+  );
+}

@@ -3,8 +3,8 @@ import { Botongen } from "../Components/Boton";
 import React, { useState , useEffect} from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import { QrReader } from 'react-qr-reader';
-import { DataStore } from '@aws-amplify/datastore';
-import { Addticket } from '../models';
+// import { DataStore } from '@aws-amplify/datastore';
+// import { Addticket } from '../models';
 import CryptoJS from "crypto-js";
 
 
@@ -22,19 +22,19 @@ export function Final() {
 
     console.log(data.id)
 
-    const fetchTickets = async () => {
-      try {
-        const original = await DataStore.query(Addticket, data.id);
-        console.log(original)
-        const modified = await DataStore.save(
-          Addticket.copyOf(original, updated => {
-            updated.estado = true;
-          })
-        )
-        console.log(modified)
-      } catch (err) {
-        console.log('error fetching') }
-      }
+    // const fetchTickets = async () => {
+    //   try {
+    //     const original = await DataStore.query(Addticket, data.id);
+    //     console.log(original)
+    //     const modified = await DataStore.save(
+    //       Addticket.copyOf(original, updated => {
+    //         updated.estado = true;
+    //       })
+    //     )
+    //     console.log(modified)
+    //   } catch (err) {
+    //     console.log('error fetching') }
+    //   }
     
     var newStr = ""
 
@@ -57,7 +57,7 @@ export function Final() {
       <main>
         <h1 className={styles.text11}>¡Muchas gracias! </h1>
         <h1 className={styles.text11}>¡No tardes en ponerte en contacto con tu vendedor!</h1>
-        <QrReader
+        {/* <QrReader
         onResult={(result, error) => {
           if (!!result) {
             setData(result?.text);
@@ -79,7 +79,7 @@ export function Final() {
         constraints={{
           facingMode: "environment"
       }}
-      />
+      /> */}
       <p>{datavalid}</p>
         {/* <div className={styles.divimg2}><img className={styles.img2} src={donut} alt="" /></div> */}
         <h3 className={styles.new1}>Este es el instagram de tu vendedor:</h3>
