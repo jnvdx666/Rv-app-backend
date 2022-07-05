@@ -1,20 +1,30 @@
 import { MoviesGrid } from "../Components/MoviesGrid";
 import styles from "./Ordenador.module.css";
-import { Botongen } from "../Components/Boton"
+import { Botongen } from "../Components/Boton";
 import { useState, createContext, useContext } from "react";
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
-import logo from "./logorv.svg"
-import fondo from "./new.png"
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useLocation,
+} from "react-router-dom";
+import logo from "./logorv.svg";
+import fondo from "./new.png";
+import julio from "./FotosCal/juliopc.jpg";
+import agosto from "./FotosCal/agostopc.jpg";
+import septiembre from "./FotosCal/septiembrepc.jpg";
+import octubre from "./FotosCal/octubrepc.jpg";
 
 // style={{ backgroundImage: `url(${fondo})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }}
 
 export function Ordenador() {
-
-    return(
-        <div>
-            <h1 className={styles.text1}>Ups. Todavia no tenemos la versión web disponible. Puedes probarla en el movil si quieres :)</h1>
-            <img className={styles.img1} src={logo} alt="" />
-            <h1 className={styles.text1}>Oops. We don't have the web version available yet. You can try it on your mobile if you want :)</h1>
-        </div>
-    );
-  }
+  return (
+    <div>
+      <img className={styles.img2} src={julio} alt="" />
+      <img className={styles.img2} src={agosto} alt="" />
+      <img className={styles.img2} src={septiembre} alt="" />
+      <img className={styles.img2} src={octubre} alt="" />
+    </div>
+  );
+}
