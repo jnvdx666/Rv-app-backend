@@ -17,16 +17,16 @@ import ReactGA from "react-ga";
 import Amplify from "aws-amplify";
 import { Hub } from "aws-amplify";
 import awsExports from "../aws-exports";
-// import { DataStore } from "@aws-amplify/datastore";
-// import { Discotecas, Addticket } from "../models";
-import jul1 from "./FotosCal/STORIE JULIO.svg"
-import jul2 from "./FotosCal/STORIE JULIO 1.jpg"
-import ago1 from "./FotosCal/STORIE AGOSTO.svg"
-import ago2 from "./FotosCal/STORIE AGOSTO 1.jpg"
-import sep1 from "./FotosCal/STORIE SEPTIEMBRE.svg"
-import sep2 from "./FotosCal/STORIE SEPTIEMBRE.jpg"
-import oct1 from "./FotosCal/STORIE OCTUBRE.svg"
-import oct2 from "./FotosCal/STORIE OCTUBRE 1.jpg"
+import { DataStore } from "@aws-amplify/datastore";
+import { Discotecas, Addticket } from "../models";
+import jul1 from "./FotosCal/juliom.jpg"
+import jul2 from "./FotosCal/juliom2.jpg"
+import ago1 from "./FotosCal/agostom.jpg"
+import ago2 from "./FotosCal/agosto2m.jpg"
+import sep1 from "./FotosCal/septiembrem.jpg"
+import sep2 from "./FotosCal/septiembre2m.jpg"
+import oct1 from "./FotosCal/octubrem.jpg"
+import oct2 from "./FotosCal/octubre2m.jpg"
 
 Amplify.configure(awsExports);
 
